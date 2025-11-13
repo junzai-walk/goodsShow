@@ -151,7 +151,7 @@ const OrderManage = () => {
       dataIndex: 'amount',
       key: 'amount',
       width: 120,
-      render: (amount: number) => `¥${amount.toLocaleString()}`,
+      render: (_: any, record: Order) => `¥${record.amount.toLocaleString()}`,
       sorter: (a: Order, b: Order) => a.amount - b.amount,
     },
     {
@@ -166,7 +166,8 @@ const OrderManage = () => {
         completed: { text: '已完成', status: 'Success' },
         cancelled: { text: '已取消', status: 'Error' },
       },
-      render: (status: keyof typeof statusMap) => {
+      render: (_: any, record: Order) => {
+        const status = record.status as keyof typeof statusMap;
         if (!status || !statusMap[status]) {
           return <Tag color="default">未知状态</Tag>;
         }
@@ -185,7 +186,7 @@ const OrderManage = () => {
       key: 'action',
       width: 200,
       search: false,
-      fixed: 'right',
+      fixed: 'right' as const,
       render: (_: any, record: Order) => (
         <Space>
           <Button type="link" icon={<EyeOutlined />} size="small" onClick={() => handleViewDetail(record)}>

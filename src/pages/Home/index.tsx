@@ -1,13 +1,10 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Card, Button, Row, Col, Tag, Rate, Badge, Input, Drawer, message, InputNumber, Empty } from 'antd';
+import { Card, Button, Row, Col, Rate, Badge, Input, Drawer, message, Empty } from 'antd';
 import {
   ShoppingCartOutlined,
   HeartOutlined,
-  StarFilled,
   FireOutlined,
-  ThunderboltOutlined,
-  CrownOutlined,
   SearchOutlined,
   DeleteOutlined,
   MinusOutlined,

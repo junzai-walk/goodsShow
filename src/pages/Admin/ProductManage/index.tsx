@@ -27,7 +27,7 @@ const ProductManage = () => {
       key: 'image',
       width: 100,
       search: false,
-      render: (image: string) => <Image src={image} width={60} height={60} style={{ objectFit: 'cover' }} />,
+      render: (_: any, record: Product) => <Image src={record.image} width={60} height={60} style={{ objectFit: 'cover' }} />,
     },
     {
       title: '商品名称',
@@ -56,7 +56,7 @@ const ProductManage = () => {
       key: 'price',
       width: 100,
       search: false,
-      render: (price: number) => `¥${price}`,
+      render: (_: any, record: Product) => `¥${record.price}`,
       sorter: (a: Product, b: Product) => a.price - b.price,
     },
     {
@@ -65,9 +65,9 @@ const ProductManage = () => {
       key: 'stock',
       width: 100,
       search: false,
-      render: (stock: number) => (
-        <Tag color={stock > 500 ? 'green' : stock > 100 ? 'orange' : 'red'}>
-          {stock}
+      render: (_: any, record: Product) => (
+        <Tag color={record.stock > 500 ? 'green' : record.stock > 100 ? 'orange' : 'red'}>
+          {record.stock}
         </Tag>
       ),
       sorter: (a: Product, b: Product) => a.stock - b.stock,
@@ -86,8 +86,8 @@ const ProductManage = () => {
       key: 'rating',
       width: 100,
       search: false,
-      render: (rating: number) => (
-        <Tag color="blue">{rating} ⭐</Tag>
+      render: (_: any, record: Product) => (
+        <Tag color="blue">{record.rating} ⭐</Tag>
       ),
     },
     {
@@ -95,7 +95,7 @@ const ProductManage = () => {
       key: 'action',
       width: 150,
       search: false,
-      fixed: 'right',
+      fixed: 'right' as const,
       render: (_: any, record: Product) => (
         <Space>
           <Button

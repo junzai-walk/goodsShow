@@ -1,4 +1,4 @@
-import { Row, Col, Card, Statistic, Table } from 'antd';
+import { Row, Col, Statistic, Table } from 'antd';
 import { ArrowUpOutlined, ArrowDownOutlined } from '@ant-design/icons';
 import { ProCard } from '@ant-design/pro-components';
 import ReactECharts from 'echarts-for-react';

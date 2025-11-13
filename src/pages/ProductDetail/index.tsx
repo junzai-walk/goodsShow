@@ -23,8 +23,7 @@ import {
   SafetyOutlined,
   TruckOutlined,
   CustomerServiceOutlined,
-  HomeOutlined,
-  StarFilled
+  HomeOutlined
 } from '@ant-design/icons';
 import { products } from '../../mock/products';
 import type { Product } from '../../types/product';

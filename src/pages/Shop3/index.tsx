@@ -3,7 +3,6 @@ import { Layout, Menu, Carousel, Card, Button, Badge, Input, Row, Col, Tag, Rate
 import {
   ShoppingCartOutlined,
   UserOutlined,
-  SearchOutlined,
   ArrowLeftOutlined,
   FireOutlined,
   CrownOutlined,
@@ -16,7 +15,7 @@ import { products, categories, banners } from '../../mock/products';
 import type { Product } from '../../types/product';
 import './index.css';
 
-const { Header, Content, Footer, Sider } = Layout;
+const { Header, Content, Footer } = Layout;
 const { Meta } = Card;
 
 const Shop3 = () => {

@@ -1,13 +1,14 @@
 import { useState } from 'react';
-import { Form, Input, Button, Tabs, message, Checkbox, Radio, Space } from 'antd';
+import { Form, Input, Button, Tabs, message, Checkbox, Radio } from 'antd';
 import { UserOutlined, LockOutlined, MailOutlined, PhoneOutlined, ShopOutlined, IdcardOutlined, HomeOutlined } from '@ant-design/icons';
 import { useNavigate } from 'react-router-dom';
-import type { UserRole } from '../../types/product';
 import './index.css';
+
+type UserRole = 'user' | 'shop1' | 'shop2' | 'shop3' | 'admin' | 'supplier' | 'distributor';
 
 const Login = () => {
   const [activeTab, setActiveTab] = useState('login');
-  const [userRole, setUserRole] = useState<UserRole>('user' as UserRole);
+  const [userRole, setUserRole] = useState<UserRole>('user');
   const [loginForm] = Form.useForm();
   const [registerForm] = Form.useForm();
   const navigate = useNavigate();

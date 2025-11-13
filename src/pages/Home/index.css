@@ -107,6 +107,64 @@
   border: none;
 }
 
+/* 分类导航 */
+.category-nav {
+  background: white;
+  padding: 20px 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.category-list {
+  display: flex;
+  gap: 12px;
+  /* overflow-x: auto; */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.category-list::-webkit-scrollbar {
+  display: none;
+}
+
+.category-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  background: #fafafa;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  border: 2px solid transparent;
+}
+
+.category-item:hover {
+  background: #f0f0f0;
+  transform: translateY(-2px);
+}
+
+.category-item.active {
+  background: #fff1f0;
+  border-color: #ff6b6b;
+}
+
+.category-icon {
+  font-size: 24px;
+}
+
+.category-name {
+  font-size: 14px;
+  font-weight: 500;
+  color: #262626;
+}
+
+.category-item.active .category-name {
+  color: #ff6b6b;
+  font-weight: 600;
+}
+
 /* 快捷入口 */
 .quick-links {
   padding: 40px 24px;

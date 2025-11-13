@@ -10,7 +10,11 @@ import {
   Image,
   Tag,
   Divider,
-  Progress
+  Progress,
+  Card,
+  Avatar,
+  Radio,
+  Space
 } from 'antd';
 import {
   ShoppingCartOutlined,
@@ -24,19 +28,30 @@ import {
 } from '@ant-design/icons';
 import { products } from '../../mock/products';
 import type { Product } from '../../types/product';
+import { useCart } from '../../contexts/CartContext';
 import './index.css';
 
 const ProductDetail = () => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
+  const { addToCart } = useCart();
   const [product, setProduct] = useState<Product | null>(null);
   const [quantity, setQuantity] = useState(1);
   const [selectedImage, setSelectedImage] = useState(0);
+  const [selectedColor, setSelectedColor] = useState<string>();
+  const [selectedSize, setSelectedSize] = useState<string>();
 
   useEffect(() => {
     const foundProduct = products.find(p => p.id === Number(id));
     if (foundProduct) {
       setProduct(foundProduct);
+      // 设置默认选项
+      if (foundProduct.colors && foundProduct.colors.length > 0) {
+        setSelectedColor(foundProduct.colors[0]);
+      }
+      if (foundProduct.sizes && foundProduct.sizes.length > 0) {
+        setSelectedSize(foundProduct.sizes[0]);
+      }
     } else {
       message.error('商品不存在');
       navigate('/');
@@ -47,32 +62,20 @@ const ProductDetail = () => {
     return <div className="product-detail-loading">加载中...</div>;
   }
 
-  // 模拟多张商品图片
-  const productImages = [
-    product.image,
-    product.image,
-    product.image,
-    product.image,
-  ];
+  // 使用商品的多张图片，如果没有则使用主图
+  const productImages = product.images && product.images.length > 0
+    ? product.images
+    : [product.image, product.image, product.image];
 
   // 加入购物车
   const handleAddToCart = () => {
-    const cartItems = JSON.parse(localStorage.getItem('cart') || '[]');
-    const existingItem = cartItems.find((item: any) => item.id === product.id);
-    
-    if (existingItem) {
-      existingItem.quantity += quantity;
-    } else {
-      cartItems.push({ ...product, quantity });
-    }
-    
-    localStorage.setItem('cart', JSON.stringify(cartItems));
+    addToCart(product, quantity, selectedColor, selectedSize);
     message.success(`已添加 ${quantity} 件商品到购物车`);
   };
 
   // 立即购买
   const handleBuyNow = () => {
-    handleAddToCart();
+    addToCart(product, quantity, selectedColor, selectedSize);
     navigate('/cart');
   };
 
@@ -134,6 +137,13 @@ const ProductDetail = () => {
         <div className="detail-content">
           <h3>商品介绍</h3>
           <p>{product.description}</p>
+          {product.detailDescription && (
+            <>
+              <Divider />
+              <h3>详细描述</h3>
+              <p>{product.detailDescription}</p>
+            </>
+          )}
           <Divider />
           <h3>商品参数</h3>
           <div className="product-params">
@@ -153,6 +163,12 @@ const ProductDetail = () => {
               <span className="param-label">已售数量：</span>
               <span className="param-value">{product.sales} 件</span>
             </div>
+            {product.specs && Object.entries(product.specs).map(([key, value]) => (
+              <div key={key} className="param-item">
+                <span className="param-label">{key}：</span>
+                <span className="param-value">{value}</span>
+              </div>
+            ))}
           </div>
         </div>
       ),
@@ -260,6 +276,38 @@ const ProductDetail = () => {
             <Tag color="red">
               省 ¥{product.originalPrice - product.price}
             </Tag>
+          )}
+
+          {/* 颜色选择 */}
+          {product.colors && product.colors.length > 0 && (
+            <div className="product-options">
+              <div className="option-label">颜色：</div>
+              <Radio.Group value={selectedColor} onChange={(e) => setSelectedColor(e.target.value)}>
+                <Space wrap>
+                  {product.colors.map((color) => (
+                    <Radio.Button key={color} value={color}>
+                      {color}
+                    </Radio.Button>
+                  ))}
+                </Space>
+              </Radio.Group>
+            </div>
+          )}
+
+          {/* 尺寸选择 */}
+          {product.sizes && product.sizes.length > 0 && (
+            <div className="product-options">
+              <div className="option-label">规格：</div>
+              <Radio.Group value={selectedSize} onChange={(e) => setSelectedSize(e.target.value)}>
+                <Space wrap>
+                  {product.sizes.map((size) => (
+                    <Radio.Button key={size} value={size}>
+                      {size}
+                    </Radio.Button>
+                  ))}
+                </Space>
+              </Radio.Group>
+            </div>
           )}
 
           <div className="product-stock">

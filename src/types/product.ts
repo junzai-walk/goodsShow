@@ -5,11 +5,16 @@ export interface Product {
   price: number;
   originalPrice?: number;
   image: string;
+  images?: string[]; // 多张商品图片
   category: string;
   sales: number;
   stock: number;
   description: string;
+  detailDescription?: string; // 详细描述
   rating: number;
+  specs?: { [key: string]: string }; // 规格参数
+  colors?: string[]; // 可选颜色
+  sizes?: string[]; // 可选尺寸
 }
 
 // 分类类型定义

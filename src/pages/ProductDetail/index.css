@@ -184,6 +184,40 @@
   text-decoration: line-through;
 }
 
+/* 商品选项 */
+.product-options {
+  margin: 20px 0;
+  padding: 16px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.option-label {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+
+.product-options .ant-radio-button-wrapper {
+  height: 36px;
+  line-height: 34px;
+  padding: 0 16px;
+  border-radius: 4px;
+  margin-right: 8px;
+  margin-bottom: 8px;
+}
+
+.product-options .ant-radio-button-wrapper-checked {
+  background: #ff6b6b;
+  border-color: #ff6b6b;
+  color: white;
+}
+
+.product-options .ant-radio-button-wrapper-checked:hover {
+  background: #ff5252;
+  border-color: #ff5252;
+}
+
 .product-stock {
   margin-bottom: 20px;
   font-size: 14px;

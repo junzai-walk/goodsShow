@@ -1,5 +1,6 @@
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Card, Button, Row, Col, Tag, Rate, Badge, Input } from 'antd';
+import { Card, Button, Row, Col, Tag, Rate, Badge, Input, Drawer, message, InputNumber, Empty } from 'antd';
 import {
   ShoppingCartOutlined,
   HeartOutlined,
@@ -7,25 +8,45 @@ import {
   FireOutlined,
   ThunderboltOutlined,
   CrownOutlined,
-  SearchOutlined
+  SearchOutlined,
+  DeleteOutlined,
+  MinusOutlined,
+  PlusOutlined
 } from '@ant-design/icons';
-import { products } from '../../mock/products';
+import { products, categories } from '../../mock/products';
+import { useCart } from '../../contexts/CartContext';
 import './index.css';
 
 const { Meta } = Card;
 
 const Home = () => {
   const navigate = useNavigate();
+  const { cartItems, addToCart, removeFromCart, updateQuantity, getCartTotal, getCartCount } = useCart();
+  const [cartVisible, setCartVisible] = useState(false);
+  const [selectedCategory, setSelectedCategory] = useState('全部');
 
-  // 获取热门商品（前8个）
-  const hotProducts = products.slice(0, 8);
+  // 根据分类筛选商品
+  const filteredProducts = selectedCategory === '全部'
+    ? products
+    : products.filter(p => p.category === selectedCategory);
+
+  // 处理加入购物车
+  const handleAddToCart = (product: any) => {
+    addToCart(product, 1);
+    message.success(`${product.name} 已加入购物车！`);
+  };
+
+  // 处理查看商品详情
+  const handleViewDetail = (productId: number) => {
+    navigate(`/product/${productId}`);
+  };
 
   return (
     <div className="modern-home-container">
       {/* 顶部导航栏 */}
       <div className="top-nav">
         <div className="nav-content">
-          <div className="logo-section">
+          <div className="logo-section" onClick={() => navigate('/')}>
             <ShoppingCartOutlined className="logo-icon" />
             <span className="logo-text">跨境优选商城</span>
           </div>
@@ -41,8 +62,13 @@ const Home = () => {
             <Button type="text" icon={<HeartOutlined />} className="nav-btn">
               收藏
             </Button>
-            <Badge count={0} showZero>
-              <Button type="text" icon={<ShoppingCartOutlined />} className="nav-btn">
+            <Badge count={getCartCount()} showZero>
+              <Button
+                type="text"
+                icon={<ShoppingCartOutlined />}
+                className="nav-btn"
+                onClick={() => setCartVisible(true)}
+              >
                 购物车
               </Button>
             </Badge>
@@ -64,6 +90,31 @@ const Home = () => {
             <Tag icon={<ThunderboltOutlined />} color="gold">限时特惠</Tag>
             <Tag icon={<CrownOutlined />} color="purple">新品首发</Tag>
             <Tag icon={<StarFilled />} color="red">爆款推荐</Tag>
+          </div>
+        </div>
+      </div>
+
+      {/* 分类导航 */}
+      <div className="category-nav">
+        <div className="container">
+          <div className="category-list">
+            <div
+              className={`category-item ${selectedCategory === '全部' ? 'active' : ''}`}
+              onClick={() => setSelectedCategory('全部')}
+            >
+              <span className="category-icon">🏪</span>
+              <span className="category-name">全部</span>
+            </div>
+            {categories.map((cat) => (
+              <div
+                key={cat.id}
+                className={`category-item ${selectedCategory === cat.name ? 'active' : ''}`}
+                onClick={() => setSelectedCategory(cat.name)}
+              >
+                <span className="category-icon">{cat.icon}</span>
+                <span className="category-name">{cat.name}</span>
+              </div>
+            ))}
           </div>
         </div>
       </div>
@@ -109,24 +160,28 @@ const Home = () => {
         </div>
       </div>
 
-      {/* 热门商品区域 */}
+      {/* 商品展示区域 */}
       <div className="products-section">
         <div className="container">
           <div className="section-header">
             <h2 className="section-title">
-              <FireOutlined /> 热门推荐
+              <FireOutlined /> {selectedCategory === '全部' ? '热门推荐' : selectedCategory}
             </h2>
-            <p className="section-subtitle">精选全球优质商品，为您带来极致购物体验</p>
+            <p className="section-subtitle">
+              {selectedCategory === '全部'
+                ? '精选全球优质商品，为您带来极致购物体验'
+                : `共 ${filteredProducts.length} 件商品`}
+            </p>
           </div>
 
           <Row gutter={[16, 16]}>
-            {hotProducts.map((product) => (
+            {filteredProducts.map((product) => (
               <Col xs={12} sm={12} md={6} lg={6} key={product.id}>
                 <Card
                   hoverable
                   className="product-card-modern"
                   cover={
-                    <div className="product-image-container">
+                    <div className="product-image-container" onClick={() => handleViewDetail(product.id)}>
                       <img alt={product.name} src={product.image} />
                       {product.originalPrice && (
                         <div className="discount-badge">
@@ -134,7 +189,15 @@ const Home = () => {
                         </div>
                       )}
                       <div className="product-overlay">
-                        <Button type="primary" icon={<ShoppingCartOutlined />} size="large">
+                        <Button
+                          type="primary"
+                          icon={<ShoppingCartOutlined />}
+                          size="large"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            handleAddToCart(product);
+                          }}
+                        >
                           加入购物车
                         </Button>
                       </div>
@@ -143,7 +206,9 @@ const Home = () => {
                 >
                   <Meta
                     title={
-                      <div className="product-title-modern">{product.name}</div>
+                      <div className="product-title-modern" onClick={() => handleViewDetail(product.id)}>
+                        {product.name}
+                      </div>
                     }
                     description={
                       <div className="product-info-modern">
@@ -169,6 +234,79 @@ const Home = () => {
           </Row>
         </div>
       </div>
+
+      {/* 购物车抽屉 */}
+      <Drawer
+        title={`购物车 (${getCartCount()} 件商品)`}
+        placement="right"
+        onClose={() => setCartVisible(false)}
+        open={cartVisible}
+        width={400}
+        footer={
+          cartItems.length > 0 && (
+            <div style={{ padding: '16px 0' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 16, fontSize: 16, fontWeight: 600 }}>
+                <span>总计：</span>
+                <span style={{ color: '#ff4d4f', fontSize: 20 }}>¥{getCartTotal().toFixed(2)}</span>
+              </div>
+              <Button type="primary" size="large" block onClick={() => navigate('/cart')}>
+                去结算
+              </Button>
+            </div>
+          )
+        }
+      >
+        {cartItems.length === 0 ? (
+          <Empty description="购物车是空的" />
+        ) : (
+          <div className="cart-items">
+            {cartItems.map((item) => (
+              <Card key={item.id} style={{ marginBottom: 16 }} size="small">
+                <div style={{ display: 'flex', gap: 12 }}>
+                  <img
+                    src={item.image}
+                    alt={item.name}
+                    style={{ width: 80, height: 80, objectFit: 'cover', borderRadius: 4, cursor: 'pointer' }}
+                    onClick={() => {
+                      setCartVisible(false);
+                      handleViewDetail(item.id);
+                    }}
+                  />
+                  <div style={{ flex: 1 }}>
+                    <h4 style={{ margin: '0 0 8px 0', fontSize: 14 }}>{item.name}</h4>
+                    <p style={{ color: '#ff4d4f', fontSize: 16, fontWeight: 'bold', margin: '0 0 8px 0' }}>
+                      ¥{item.price}
+                    </p>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+                      <Button
+                        size="small"
+                        icon={<MinusOutlined />}
+                        onClick={() => updateQuantity(item.id, item.quantity - 1)}
+                      />
+                      <span style={{ minWidth: 30, textAlign: 'center' }}>{item.quantity}</span>
+                      <Button
+                        size="small"
+                        icon={<PlusOutlined />}
+                        onClick={() => updateQuantity(item.id, item.quantity + 1)}
+                      />
+                      <Button
+                        size="small"
+                        danger
+                        icon={<DeleteOutlined />}
+                        onClick={() => {
+                          removeFromCart(item.id);
+                          message.success('已从购物车移除');
+                        }}
+                        style={{ marginLeft: 'auto' }}
+                      />
+                    </div>
+                  </div>
+                </div>
+              </Card>
+            ))}
+          </div>
+        )}
+      </Drawer>
 
       {/* 底部 */}
       <div className="modern-footer">

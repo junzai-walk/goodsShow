@@ -90,7 +90,7 @@ const Shop2 = () => {
         <div className="tech-banner">
           <div className="banner-bg" style={{ backgroundImage: `url(${banners[currentBanner].image})` }}>
             <div className="banner-overlay"></div>
-            <div className="banner-content">
+            {/* <div className="banner-content">
               <h1 className="glitch" data-text={banners[currentBanner].title}>
                 {banners[currentBanner].title}
               </h1>
@@ -98,7 +98,7 @@ const Shop2 = () => {
               <Button type="primary" size="large" className="tech-button">
                 立即探索
               </Button>
-            </div>
+            </div> */}
           </div>
           <div className="banner-indicators">
             {banners.map((_, index) => (

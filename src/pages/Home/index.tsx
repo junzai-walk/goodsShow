@@ -81,7 +81,7 @@ const Home = () => {
 
       {/* Banner 区域 */}
       <div className="hero-banner">
-        <div className="banner-content">
+        {/* <div className="banner-content">
           <h1 className="banner-title">
             <FireOutlined /> 全球精选好物
           </h1>
@@ -91,7 +91,7 @@ const Home = () => {
             <Tag icon={<CrownOutlined />} color="purple">新品首发</Tag>
             <Tag icon={<StarFilled />} color="red">爆款推荐</Tag>
           </div>
-        </div>
+        </div> */}
       </div>
 
       {/* 分类导航 */}

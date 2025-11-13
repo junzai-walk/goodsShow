@@ -18,20 +18,20 @@ export const products: Product[] = [
   // 电子产品 (8个)
   {
     id: 1,
-    name: 'iPhone 17 Pro Max',
+    name: 'iphone 17 Pro Max',
     price: 9999,
     originalPrice: 10999,
-    image: 'https://images.unsplash.com/photo-1696446702183-cbd50c2a8991?w=400',
+    image: 'https://images.unsplash.com/photo-1678652197831-2d180705cd2c?w=400',
     images: [
-      'https://images.unsplash.com/photo-1696446702183-cbd50c2a8991?w=800',
-      'https://images.unsplash.com/photo-1592286927505-2fd0f2aa4e3e?w=800',
-      'https://images.unsplash.com/photo-1611472173362-3f53dbd65d80?w=800'
+      'https://images.unsplash.com/photo-1678652197831-2d180705cd2c?w=800',
+      'https://images.unsplash.com/photo-1678911820864-e2c567c655d7?w=800',
+      'https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=800'
     ],
     category: '电子产品',
     sales: 15234,
     stock: 500,
     description: '钛金属设计，A17 Pro 芯片，专业级摄像系统',
-    detailDescription: '全新 iPhone 17 Pro Max 采用航空级钛金属设计，搭载 A17 Pro 芯片，性能提升 20%。配备专业级三摄系统，支持 8K 视频录制。6.7 英寸 ProMotion 显示屏，120Hz 自适应刷新率。支持卫星通信，紧急情况下也能保持联系。',
+    detailDescription: '全新 iphone 17 Pro Max 采用航空级钛金属设计，搭载 A17 Pro 芯片，性能提升 20%。配备专业级三摄系统，支持 8K 视频录制。6.7 英寸 ProMotion 显示屏，120Hz 自适应刷新率。支持卫星通信，紧急情况下也能保持联系。',
     rating: 4.9,
     colors: ['钛金色', '深空黑', '银色', '蓝色'],
     sizes: ['128GB', '256GB', '512GB', '1TB'],
@@ -341,7 +341,7 @@ export const banners: Banner[] = [
     id: 1,
     image: 'https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=1200',
     title: '新品首发',
-    subtitle: 'iPhone 17 系列全新上市',
+    subtitle: 'iphone 17 系列全新上市',
   },
   {
     id: 2,

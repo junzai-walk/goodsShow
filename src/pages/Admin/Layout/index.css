@@ -1,0 +1,17 @@
+.admin-layout {
+  height: 100vh;
+}
+
+.admin-layout .ant-pro-layout {
+  height: 100vh;
+}
+
+.admin-layout .ant-pro-page-container {
+  background: #f0f2f5;
+}
+
+.admin-layout .ant-pro-page-container-children-content {
+  overflow-y: auto;
+  max-height: calc(100vh - 120px);
+}
+

@@ -1,0 +1,56 @@
+.settings-container {
+  min-height: 100vh;
+  background: #1a202c;
+  padding: 24px;
+}
+
+.settings-container .settings-card {
+  background: #2d3748;
+  border: 1px solid #4a5568;
+  border-radius: 8px;
+}
+
+.settings-container .settings-card .ant-card-head {
+  border-bottom: 1px solid #4a5568;
+  color: #fff;
+}
+
+.settings-container .settings-card .ant-card-head-title {
+  color: #fff;
+  font-weight: 600;
+}
+
+.settings-container .ant-form-item-label > label {
+  color: #e2e8f0;
+}
+
+.settings-container .ant-input,
+.settings-container .ant-select-selector {
+  background: #1a202c;
+  border-color: #4a5568;
+  color: #e2e8f0;
+}
+
+.settings-container .ant-input:hover,
+.settings-container .ant-select-selector:hover {
+  border-color: #1890ff;
+}
+
+.settings-container .ant-input:focus,
+.settings-container .ant-select-focused .ant-select-selector {
+  border-color: #1890ff;
+  box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
+}
+
+.settings-container .ant-select-arrow {
+  color: #a0aec0;
+}
+
+.settings-container .ant-divider {
+  border-color: #4a5568;
+}
+
+.settings-container .ant-divider-inner-text {
+  color: #a0aec0;
+}
+

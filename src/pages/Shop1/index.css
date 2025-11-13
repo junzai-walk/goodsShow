@@ -1,0 +1,183 @@
+.shop1-layout {
+  min-height: 100vh;
+}
+
+.shop1-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 0;
+  height: 80px;
+  line-height: 80px;
+}
+
+.header-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+}
+
+.shop1-carousel {
+  height: 500px;
+}
+
+.carousel-item {
+  height: 500px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.carousel-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.carousel-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: white;
+}
+
+.carousel-content h2 {
+  font-size: 48px;
+  font-weight: bold;
+  margin-bottom: 16px;
+  color: white;
+}
+
+.carousel-content p {
+  font-size: 24px;
+  margin-bottom: 32px;
+}
+
+.category-section {
+  background: white;
+  padding: 20px 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.product-card {
+  height: 100%;
+  transition: all 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.product-desc {
+  color: #666;
+  font-size: 13px;
+  margin: 8px 0;
+  height: 40px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.price {
+  color: #ff4d4f;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.original-price {
+  color: #999;
+  font-size: 14px;
+  text-decoration: line-through;
+  margin-left: 8px;
+}
+
+/* 搜索框样式优化 - 现代简约风格 */
+.search-bar{
+  display: flex;
+}
+
+
+.search-bar .ant-input-search {
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+.search-bar .ant-input-search .ant-input {
+  background: rgba(255, 255, 255, 0.95);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 24px 0 0 24px;
+  padding: 8px 20px;
+  font-size: 15px;
+  transition: all 0.3s ease;
+}
+
+.search-bar .ant-input-search .ant-input:hover,
+.search-bar .ant-input-search .ant-input:focus {
+  background: rgba(255, 255, 255, 1);
+  border-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.search-bar .ant-input-search .ant-input::placeholder {
+  color: rgba(102, 126, 234, 0.6);
+  font-weight: 500;
+}
+
+.search-bar .ant-input-search .ant-input-group-addon {
+  background: transparent;
+  border: none;
+}
+
+.search-bar .ant-input-search .ant-btn-primary {
+  background: rgba(255, 255, 255, 0.95);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-left: none;
+  color: #667eea;
+  font-weight: 600;
+  height: 40px;
+  border-radius: 0 24px 24px 0;
+  transition: all 0.3s ease;
+}
+
+.search-bar .ant-input-search .ant-btn-primary:hover {
+  background: rgba(255, 255, 255, 1);
+  color: #764ba2;
+  border-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.search-bar .ant-input-search .ant-input-prefix {
+  color: #667eea;
+  font-size: 16px;
+}
+

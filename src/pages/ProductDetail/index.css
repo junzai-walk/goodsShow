@@ -1,0 +1,425 @@
+.product-detail-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px;
+  background: #f5f5f5;
+  min-height: 100vh;
+}
+
+.product-detail-loading {
+  text-align: center;
+  padding: 100px 0;
+  font-size: 18px;
+  color: #999;
+}
+
+.product-detail-header {
+  background: white;
+  padding: 16px 24px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+}
+
+.product-detail-content {
+  display: grid;
+  grid-template-columns: 500px 1fr;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+/* 商品图片区域 */
+.product-gallery {
+  background: white;
+  padding: 30px;
+  border-radius: 8px;
+}
+
+.main-image {
+  width: 100%;
+  margin-bottom: 20px;
+  border: 1px solid #f0f0f0;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.main-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.thumbnail-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.thumbnail {
+  border: 2px solid transparent;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.thumbnail:hover {
+  border-color: #1890ff;
+}
+
+.thumbnail.active {
+  border-color: #1890ff;
+}
+
+.thumbnail img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* 商品信息区域 */
+.product-info {
+  background: white;
+  padding: 30px;
+  border-radius: 8px;
+}
+
+.product-title {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.product-subtitle {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.product-rating {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.rating-text {
+  margin-left: 10px;
+  color: #fadb14;
+  font-weight: 500;
+}
+
+.sales-text {
+  color: #999;
+}
+
+/* 商家信息卡片 */
+.merchant-info-card {
+  background: rgba(10, 14, 39, 0.6);
+  border: 1px solid rgba(0, 242, 254, 0.3);
+  border-radius: 12px;
+}
+
+.merchant-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.merchant-details {
+  flex: 1;
+}
+
+.merchant-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 4px;
+}
+
+.merchant-rating {
+  display: flex;
+  align-items: center;
+}
+
+.shipping-info {
+  font-size: 14px;
+}
+
+.product-price-box {
+  background: linear-gradient(135deg, rgba(138, 43, 226, 0.1) 0%, rgba(0, 242, 254, 0.05) 100%);
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  border: 1px solid rgba(0, 242, 254, 0.2);
+}
+
+.price-section {
+  display: flex;
+  align-items: baseline;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.wholesale-price {
+  font-size: 24px;
+  font-weight: 700;
+  color: #00ff88;
+  margin-left: 12px;
+}
+
+.price-label {
+  font-size: 14px;
+  color: #666;
+}
+
+.current-price {
+  font-size: 32px;
+  font-weight: 700;
+  color: #ff4d4f;
+}
+
+.original-price {
+  font-size: 18px;
+  color: #999;
+  text-decoration: line-through;
+}
+
+.product-stock {
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.stock-label {
+  color: #666;
+  margin-right: 10px;
+}
+
+.stock-value {
+  color: #52c41a;
+  font-weight: 500;
+}
+
+.product-quantity {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.quantity-label {
+  margin-right: 15px;
+  font-size: 14px;
+  color: #666;
+}
+
+.product-actions {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.add-cart-btn,
+.buy-now-btn {
+  flex: 1;
+  height: 50px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.product-extra-actions {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.product-extra-actions button {
+  flex: 1;
+}
+
+.product-services {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  padding-top: 20px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.service-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #666;
+}
+
+.service-item .anticon {
+  font-size: 18px;
+  color: #1890ff;
+}
+
+/* 详情标签页 */
+.product-detail-tabs {
+  background: white;
+  padding: 30px;
+  border-radius: 8px;
+}
+
+.detail-content h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.product-params {
+  display: grid;
+  gap: 12px;
+}
+
+.param-item {
+  display: flex;
+  padding: 10px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.param-label {
+  width: 120px;
+  color: #666;
+  font-weight: 500;
+}
+
+.param-value {
+  color: #333;
+}
+
+/* 评价区域 */
+.reviews-content {
+  padding: 20px 0;
+}
+
+.rating-summary {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 40px;
+  padding: 20px;
+  background: #fafafa;
+  border-radius: 8px;
+}
+
+.rating-score {
+  text-align: center;
+}
+
+.score-number {
+  font-size: 48px;
+  font-weight: 700;
+  color: #fadb14;
+  margin-bottom: 10px;
+}
+
+.score-text {
+  margin-top: 10px;
+  color: #666;
+  font-size: 14px;
+}
+
+.rating-distribution {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.rating-bar {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.star-label {
+  width: 40px;
+  font-size: 14px;
+  color: #666;
+}
+
+.rating-bar .ant-progress {
+  flex: 1;
+}
+
+.count-label {
+  width: 60px;
+  text-align: right;
+  font-size: 14px;
+  color: #999;
+}
+
+.reviews-list {
+  margin-top: 20px;
+}
+
+.review-card {
+  margin-bottom: 15px;
+}
+
+.review-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.review-user-info {
+  flex: 1;
+}
+
+.review-user-name {
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.review-date {
+  color: #999;
+  font-size: 12px;
+}
+
+.review-content {
+  color: #666;
+  line-height: 1.6;
+}
+
+/* 响应式设计 */
+@media (max-width: 1200px) {
+  .product-detail-content {
+    grid-template-columns: 1fr;
+  }
+
+  .product-gallery {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .product-detail-container {
+    padding: 10px;
+  }
+
+  .product-title {
+    font-size: 20px;
+  }
+
+  .current-price {
+    font-size: 24px;
+  }
+
+  .product-actions {
+    flex-direction: column;
+  }
+
+  .product-services {
+    grid-template-columns: 1fr;
+  }
+
+  .rating-summary {
+    grid-template-columns: 1fr;
+  }
+}
+

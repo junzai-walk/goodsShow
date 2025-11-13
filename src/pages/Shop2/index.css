@@ -1,0 +1,388 @@
+.shop2-layout {
+  min-height: 100vh;
+  background: #0a0e27;
+}
+
+.shop2-header {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  border-bottom: 2px solid #00d4ff;
+  padding: 0;
+  height: 80px;
+  line-height: 80px;
+  box-shadow: 0 4px 20px rgba(0, 212, 255, 0.3);
+}
+
+.logo-icon {
+  font-size: 28px;
+  color: #00d4ff;
+  margin-right: 12px;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+.logo-text {
+  background: linear-gradient(135deg, #00d4ff 0%, #00ff88 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+/* 搜索框样式优化 - 科技感风格 */
+.tech-search {
+  width: 400px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.tech-search .ant-input-affix-wrapper {
+  background: rgba(0, 212, 255, 0.1);
+  border: 2px solid rgba(0, 212, 255, 0.5);
+  border-radius: 8px 0 0 8px;
+  padding: 8px 16px;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(0, 212, 255, 0.2);
+}
+
+.tech-search .ant-input-affix-wrapper:hover,
+.tech-search .ant-input-affix-wrapper-focused {
+  background: rgba(0, 212, 255, 0.15);
+  border-color: #00d4ff;
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.5), inset 0 0 10px rgba(0, 212, 255, 0.1);
+}
+
+.tech-search .ant-input {
+  background: transparent;
+  color: white;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.tech-search .ant-input::placeholder {
+  color: rgba(0, 212, 255, 0.6);
+  font-weight: 400;
+}
+
+.tech-search .ant-input-prefix {
+  color: #00d4ff;
+  font-size: 16px;
+  margin-right: 8px;
+}
+
+.tech-search .ant-input-group-addon {
+  background: transparent;
+  border: none;
+}
+
+.tech-search .ant-btn-primary {
+  background: linear-gradient(135deg, rgba(0, 212, 255, 0.3) 0%, rgba(0, 255, 136, 0.3) 100%);
+  border: 2px solid rgba(0, 212, 255, 0.5);
+  border-left: none;
+  color: #00d4ff;
+  font-weight: 700;
+  height: 40px;
+  border-radius: 0 8px 8px 0;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(0, 212, 255, 0.2);
+  text-shadow: 0 0 5px rgba(0, 212, 255, 0.5);
+}
+
+.tech-search .ant-btn-primary:hover {
+  background: linear-gradient(135deg, rgba(0, 212, 255, 0.5) 0%, rgba(0, 255, 136, 0.5) 100%);
+  border-color: #00ff88;
+  color: #00ff88;
+  box-shadow: 0 0 20px rgba(0, 255, 136, 0.6), inset 0 0 10px rgba(0, 255, 136, 0.2);
+  text-shadow: 0 0 10px rgba(0, 255, 136, 0.8);
+  transform: translateY(-2px);
+}
+
+.tech-search .ant-input-clear-icon {
+  color: rgba(0, 212, 255, 0.6);
+  transition: all 0.3s;
+}
+
+.tech-search .ant-input-clear-icon:hover {
+  color: #00ff88;
+}
+
+.header-icon {
+  font-size: 24px;
+  color: #00d4ff;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.header-icon:hover {
+  color: #00ff88;
+  transform: scale(1.1);
+}
+
+.shop2-content {
+  background: #0a0e27;
+}
+
+.tech-banner {
+  height: 600px;
+  position: relative;
+  overflow: hidden;
+}
+
+.banner-bg {
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.banner-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(0, 212, 255, 0.3) 0%, rgba(138, 43, 226, 0.3) 100%);
+}
+
+.banner-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 2;
+}
+
+.glitch {
+  font-size: 64px;
+  font-weight: bold;
+  color: white;
+  text-shadow: 0 0 10px #00d4ff, 0 0 20px #00d4ff, 0 0 30px #00d4ff;
+  margin-bottom: 20px;
+  animation: glitch 3s infinite;
+}
+
+@keyframes glitch {
+  0%, 100% { text-shadow: 0 0 10px #00d4ff; }
+  50% { text-shadow: 0 0 20px #00ff88, 0 0 30px #00ff88; }
+}
+
+.tech-subtitle {
+  font-size: 24px;
+  color: #00d4ff;
+  margin-bottom: 32px;
+}
+
+.tech-button {
+  background: linear-gradient(135deg, #00d4ff 0%, #00ff88 100%);
+  border: none;
+  height: 50px;
+  padding: 0 40px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.banner-indicators {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 12px;
+  z-index: 3;
+}
+
+.indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.indicator.active {
+  background: #00d4ff;
+  box-shadow: 0 0 10px #00d4ff;
+  width: 30px;
+  border-radius: 6px;
+}
+
+.tech-categories {
+  background: rgba(26, 26, 46, 0.8);
+  padding: 40px 0;
+  border-top: 1px solid rgba(0, 212, 255, 0.3);
+  border-bottom: 1px solid rgba(0, 212, 255, 0.3);
+}
+
+.category-grid {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.category-item {
+  padding: 20px 30px;
+  background: rgba(0, 212, 255, 0.1);
+  border: 1px solid rgba(0, 212, 255, 0.3);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: white;
+}
+
+.category-item:hover, .category-item.active {
+  background: rgba(0, 212, 255, 0.3);
+  border-color: #00d4ff;
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+  transform: translateY(-5px);
+}
+
+.category-icon {
+  font-size: 32px;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 36px;
+  color: white;
+  margin-bottom: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.title-line {
+  width: 100px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #00d4ff, transparent);
+}
+
+.tech-product-card {
+  background: rgba(26, 26, 46, 0.8);
+  border: 1px solid rgba(0, 212, 255, 0.3);
+  transition: all 0.3s;
+}
+
+.tech-product-card:hover {
+  border-color: #00d4ff;
+  box-shadow: 0 0 30px rgba(0, 212, 255, 0.5);
+  transform: translateY(-10px);
+}
+
+.tech-product-card .ant-card-body {
+  background: rgba(26, 26, 46, 0.9);
+}
+
+.product-image-wrapper {
+  position: relative;
+  overflow: hidden;
+  height: 240px;
+}
+
+.product-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.3s;
+}
+
+.tech-product-card:hover .product-image-wrapper img {
+  transform: scale(1.1);
+}
+
+.product-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 212, 255, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: all 0.3s;
+}
+
+.tech-product-card:hover .product-overlay {
+  opacity: 1;
+}
+
+.quick-view {
+  background: white;
+  color: #00d4ff;
+  border: none;
+  font-weight: bold;
+}
+
+.product-title {
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.product-desc {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 13px;
+  margin: 8px 0;
+  height: 40px;
+  overflow: hidden;
+}
+
+.price-section {
+  margin: 12px 0;
+}
+
+.tech-price {
+  color: #00ff88;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+}
+
+.tech-original-price {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 14px;
+  text-decoration: line-through;
+  margin-left: 8px;
+}
+
+.sales-tag {
+  background: rgba(0, 212, 255, 0.2);
+  border: 1px solid #00d4ff;
+  color: #00d4ff;
+}
+
+.add-cart-btn {
+  background: linear-gradient(135deg, #00d4ff 0%, #00ff88 100%);
+  border: none;
+  margin-top: 12px;
+  font-weight: bold;
+}
+
+.shop2-footer {
+  background: #1a1a2e;
+  border-top: 2px solid #00d4ff;
+  text-align: center;
+  color: white;
+}
+
+.admin-link {
+  color: #00d4ff !important;
+  font-weight: bold;
+}
+
+.admin-link:hover {
+  color: #00ff88 !important;
+}
+

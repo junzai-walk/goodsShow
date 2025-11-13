@@ -23,22 +23,11 @@ const AdminLayout = () => {
         title="电商管理后台"
         logo={<ShopOutlined style={{ fontSize: 32 }} />}
         layout="mix"
-        navTheme="realDark"
         fixedHeader
         fixSiderbar
         route={{
           path: '/admin',
           routes: [
-            {
-              path: '/admin/dashboard',
-              name: '数据看板',
-              icon: <DashboardOutlined />,
-            },
-            {
-              path: '/admin/analytics',
-              name: '数据分析',
-              icon: <BarChartOutlined />,
-            },
             {
               path: '/admin/products',
               name: '商品管理',
@@ -53,6 +42,16 @@ const AdminLayout = () => {
               path: '/admin/settings',
               name: '系统设置',
               icon: <SettingOutlined />,
+            },
+            {
+              path: '/admin/dashboard',
+              name: '数据看板',
+              icon: <DashboardOutlined />,
+            },
+            {
+              path: '/admin/analytics',
+              name: '数据分析',
+              icon: <BarChartOutlined />,
             },
           ],
         }}

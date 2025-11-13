@@ -1,56 +1,64 @@
 .settings-container {
   min-height: 100vh;
-  background: #1a202c;
+  background: #f5f7fa;
   padding: 24px;
 }
 
 .settings-container .settings-card {
-  background: #2d3748;
-  border: 1px solid #4a5568;
+  background: #ffffff;
+  border: 1px solid #e8e8e8;
   border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+}
+
+.settings-container .settings-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .settings-container .settings-card .ant-card-head {
-  border-bottom: 1px solid #4a5568;
-  color: #fff;
+  border-bottom: 1px solid #f0f0f0;
+  background: #fafafa;
 }
 
 .settings-container .settings-card .ant-card-head-title {
-  color: #fff;
+  color: #262626;
   font-weight: 600;
+  font-size: 16px;
 }
 
 .settings-container .ant-form-item-label > label {
-  color: #e2e8f0;
+  color: #595959;
+  font-weight: 500;
 }
 
 .settings-container .ant-input,
 .settings-container .ant-select-selector {
-  background: #1a202c;
-  border-color: #4a5568;
-  color: #e2e8f0;
+  background: #ffffff;
+  border-color: #d9d9d9;
+  color: #262626;
 }
 
 .settings-container .ant-input:hover,
 .settings-container .ant-select-selector:hover {
-  border-color: #1890ff;
+  border-color: #40a9ff;
 }
 
 .settings-container .ant-input:focus,
 .settings-container .ant-select-focused .ant-select-selector {
-  border-color: #1890ff;
+  border-color: #40a9ff;
   box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
 }
 
 .settings-container .ant-select-arrow {
-  color: #a0aec0;
+  color: #8c8c8c;
 }
 
 .settings-container .ant-divider {
-  border-color: #4a5568;
+  border-color: #f0f0f0;
 }
 
 .settings-container .ant-divider-inner-text {
-  color: #a0aec0;
+  color: #8c8c8c;
 }
 

@@ -1,49 +1,378 @@
-.home-container {
+/* 现代化跨境电商风格 */
+.modern-home-container {
   min-height: 100vh;
-  background: #f0f2f5;
-  padding: 0;
+  background: #f5f5f5;
 }
 
-.home-header {
+/* 顶部导航栏 */
+.top-nav {
+  background: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: 16px 0;
+}
+
+.nav-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+}
+
+.logo-icon {
+  font-size: 32px;
+  color: #ff6b6b;
+}
+
+.logo-text {
+  font-size: 20px;
+  font-weight: 700;
+  color: #262626;
+  white-space: nowrap;
+}
+
+.search-section {
+  flex: 1;
+  max-width: 600px;
+}
+
+.search-input {
+  border-radius: 24px;
+  border: 2px solid #e8e8e8;
+}
+
+.search-input:hover,
+.search-input:focus {
+  border-color: #ff6b6b;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.nav-btn {
+  font-size: 14px;
+}
+
+/* Hero Banner */
+.hero-banner {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 80px 24px;
   text-align: center;
+  color: white;
+}
+
+.banner-content {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.banner-title {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: white;
+}
+
+.banner-subtitle {
+  font-size: 20px;
+  margin-bottom: 24px;
+  opacity: 0.95;
+}
+
+.banner-tags {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.banner-tags .ant-tag {
+  font-size: 14px;
+  padding: 6px 16px;
+  border: none;
+}
+
+/* 快捷入口 */
+.quick-links {
+  padding: 40px 24px;
   background: white;
-  padding: 60px 20px 40px;
-  margin-bottom: 40px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
 }
 
-.home-header h1 {
-  font-size: 36px;
-  font-weight: 600;
-  margin-bottom: 10px;
-  color: #1890ff;
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
-.home-header p {
-  font-size: 16px;
-  color: #666;
-}
-
-.shop-card {
-  height: 100%;
+.quick-link-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 24px;
+  background: white;
+  border-radius: 12px;
+  border: 2px solid #f0f0f0;
+  cursor: pointer;
   transition: all 0.3s ease;
-  border-radius: 8px;
-  overflow: hidden;
+  margin-bottom: 16px;
 }
 
-.shop-card:hover {
+.quick-link-card:hover {
+  border-color: #ff6b6b;
   transform: translateY(-4px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.quick-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  flex-shrink: 0;
+}
+
+.quick-info h3 {
+  margin: 0 0 4px 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #262626;
+}
+
+.quick-info p {
+  margin: 0;
+  font-size: 14px;
+  color: #8c8c8c;
+}
+
+/* 商品区域 */
+.products-section {
+  padding: 60px 24px;
+  background: #f5f5f5;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.section-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #262626;
+  margin-bottom: 8px;
+}
+
+.section-subtitle {
+  font-size: 16px;
+  color: #8c8c8c;
+}
+
+/* 商品卡片 */
+.product-card-modern {
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #f0f0f0;
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+.product-card-modern:hover {
+  border-color: #ff6b6b;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  transform: translateY(-8px);
+}
+
+.product-image-container {
+  position: relative;
+  overflow: hidden;
+  background: #fafafa;
+  height: 240px;
+}
+
+.product-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.product-card-modern:hover .product-image-container img {
+  transform: scale(1.1);
+}
+
+.discount-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: #ff4d4f;
+  color: white;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.product-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.product-card-modern:hover .product-overlay {
+  opacity: 1;
+}
+
+.product-title-modern {
+  font-size: 14px;
+  font-weight: 500;
+  color: #262626;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  line-height: 1.5;
+  height: 42px;
+  margin-bottom: 8px;
+}
+
+.product-info-modern {
+  margin-top: 8px;
+}
+
+.product-rating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 8px;
+}
+
+.rating-text {
+  font-size: 12px;
+  color: #8c8c8c;
+}
+
+.product-price-section {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.current-price {
+  font-size: 20px;
+  font-weight: 700;
+  color: #ff4d4f;
+}
+
+.original-price {
+  font-size: 14px;
+  color: #999;
+  text-decoration: line-through;
+}
+
+.product-sales {
+  font-size: 12px;
+  color: #8c8c8c;
+}
+
+/* 底部 */
+.modern-footer {
+  background: #262626;
+  color: white;
+  padding: 60px 24px 24px;
+}
+
+.modern-footer h3 {
+  color: white;
+  font-size: 18px;
+  margin-bottom: 16px;
+  font-weight: 600;
+}
+
+.modern-footer p {
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.footer-bottom {
+  margin-top: 40px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+}
+
+.footer-bottom p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.5);
 }
 
 /* 响应式设计 */
 @media (max-width: 768px) {
-  .home-header h1 {
-    font-size: 28px;
+  .nav-content {
+    flex-wrap: wrap;
   }
 
-  .home-header p {
-    font-size: 14px;
+  .search-section {
+    order: 3;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .banner-title {
+    font-size: 32px;
+  }
+
+  .banner-subtitle {
+    font-size: 16px;
+  }
+
+  .section-title {
+    font-size: 24px;
+  }
+
+  .quick-link-card {
+    padding: 16px;
+  }
+
+  .quick-icon {
+    width: 48px;
+    height: 48px;
+    font-size: 24px;
+  }
+
+  .quick-info h3 {
+    font-size: 16px;
+  }
+
+  .product-image-container {
+    height: 180px;
   }
 }
 
